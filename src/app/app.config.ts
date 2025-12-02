@@ -4,9 +4,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { routes } from './app.routes';
 
-// Módulos globales
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import {LoadingInterceptor} from './core/interceptors/loading-interceptor';
 
 export const appConfig: ApplicationConfig = {
@@ -15,12 +16,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
 
-    // Registrar interceptor como en AppModule, pero aquí
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingInterceptor,
       multi: true
     },
+
+    provideCharts(withDefaultRegisterables()),
 
     importProvidersFrom(
       HttpClientModule,

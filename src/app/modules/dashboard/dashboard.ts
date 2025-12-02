@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   carteraVigente: number = 0;
   carteraVencida: number = 0;
 
-  // Gráficos
+  // Gráfico de barras
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: {
@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit {
     ]
   };
 
+  // Gráfico de torta
   public pieChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     plugins: {
@@ -62,7 +63,6 @@ export class DashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // Aquí cargarás datos reales del backend
     this.cargarDatosDashboard();
   }
 
@@ -75,3 +75,4 @@ export class DashboardComponent implements OnInit {
     this.carteraVencida = 85000;
   }
 }
+
