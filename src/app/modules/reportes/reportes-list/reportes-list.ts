@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reportes-list',
-  imports: [],
-  templateUrl: './reportes-list.html',
-  styleUrl: './reportes-list.css',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="container mt-4">
+      <h2>Módulo de Reportes</h2>
+      <p>Seleccione el tipo de reporte que desea visualizar.</p>
+    </div>
+  `,
 })
-export class ReportesList {
-
-}
+export class ReportesList {}

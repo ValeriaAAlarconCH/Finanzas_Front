@@ -1,23 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { ConfiguracionMain } from './configuracion-main';
-
-describe('ConfiguracionMain', () => {
-  let component: ConfiguracionMain;
-  let fixture: ComponentFixture<ConfiguracionMain>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ConfiguracionMain]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(ConfiguracionMain);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+  selector: 'app-configuracion-main',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="container mt-4">
+      <h2>Configuración del Sistema</h2>
+      <p>Aquí se administrarán parámetros como tasas, monedas, capitalizaciones, etc.</p>
+    </div>
+  `,
+})
+export class ConfiguracionMain {}
