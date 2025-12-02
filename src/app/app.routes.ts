@@ -12,6 +12,19 @@ import { CreditoForm } from './modules/creditos/credito-form/credito-form';
 import { CreditoDetail } from './modules/creditos/credito-detail/credito-detail';
 import { SimuladorCredito } from './modules/creditos/simulador-credito/simulador-credito';
 
+// Pagos
+import { PagosList } from './modules/pagos/pagos-list/pagos-list';
+import { PagoForm } from './modules/pagos/pago-form/pago-form';
+import { EstadoCuenta } from './modules/pagos/estado-cuenta/estado-cuenta';
+
+// Reportes
+import { ReportesList } from './modules/reportes/reportes-list/reportes-list';
+import { ReporteCreditos } from './modules/reportes/reporte-creditos/reporte-creditos';
+import { ReportePagos } from './modules/reportes/reporte-pagos/reporte-pagos';
+
+// Configuración
+import { ConfiguracionMain } from './modules/configuracion/configuracion-main/configuracion-main';
+
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
@@ -32,6 +45,19 @@ export const routes: Routes = [
 
   // Simulador
   { path: 'simulador', component: SimuladorCredito },
+
+  // Pagos
+  { path: 'pagos', component: PagosList },
+  { path: 'pagos/nuevo', component: PagoForm },
+  { path: 'creditos/:id/estado-cuenta', component: EstadoCuenta },
+
+  // Reportes
+  { path: 'reportes', component: ReportesList },
+  { path: 'reportes/creditos', component: ReporteCreditos },
+  { path: 'reportes/pagos', component: ReportePagos },
+
+  // Configuración
+  { path: 'configuracion', component: ConfiguracionMain },
 
   { path: '**', redirectTo: '/dashboard' },
 ];
